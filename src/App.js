@@ -18,9 +18,7 @@ function App() {
                 />
                 <Route path="/item/:id" element={<ItemDetailContainer />} />
                 <Route path="/cart" element={<Cart />} />
-
-                {/* <Route path="*" element={<PageNotFount/>}/> */}
-                {/* <Ejemplo /> */}
+                
             </Routes>
             <Footer />
         </BrowserRouter>
