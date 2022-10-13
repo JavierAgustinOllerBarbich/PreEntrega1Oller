@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 function CartWidget() {
     return (
         <div>
-        <FontAwesomeIcon icon={faCartShopping} /><span>1</span>
+        <FontAwesomeIcon icon={faCartShopping} /><span>3</span>
         </div>
     )
 }
