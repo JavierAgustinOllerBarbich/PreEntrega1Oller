@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList'; 
 import { products } from '../../Mock/productsMock';
 import { useParams } from 'react-router-dom';
+import RotateLoader  from 'react-spinners/RotateLoader';
 
 const ItemListContainer = () => {
     const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(true)
 
+    
 
     const { categoryName } = useParams();
  
@@ -28,16 +31,25 @@ const ItemListContainer = () => {
             })
             .catch((error) => {
                 console.log(error);
+            })
+            .finally (()=>{
+                setLoading(false);
             });
     }, [categoryName]);
 
-   
+   if (loading) {
+        return(
+            <div className="item-list-container">
+                       <RotateLoader style={{marginTop:'100px' }}color='black'/>
+             </div>
+        );
+   }
 
     return (
         <main>
-            <div className="item-list-container">
-                <ItemList items={items} />
-            </div>
+                <div className="item-list-container">
+                        <ItemList items={items} />
+                </div>  
         </main>
     );
 };

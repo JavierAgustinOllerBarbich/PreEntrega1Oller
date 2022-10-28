@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
 
                 setTimeout(() => {
                     res(producto);
-                }, 2000);
+                }, 500);
             });
         };
         traerProducto()
