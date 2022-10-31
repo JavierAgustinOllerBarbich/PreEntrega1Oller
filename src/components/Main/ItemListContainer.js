@@ -15,6 +15,7 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         const traerProductos = () => {
+            setLoading(true)
             return new Promise((res, rej) => {
                 const prodFiltrados = products.filter(
                     (prod) => prod.category === categoryName
@@ -35,21 +36,22 @@ const ItemListContainer = () => {
             .finally (()=>{
                 setLoading(false);
             });
+        
+       
     }, [categoryName]);
 
-   if (loading) {
-        return(
-            <div className="item-list-container">
-                       <RotateLoader style={{marginTop:'100px' }}color='black'/>
-             </div>
-        );
-   }
+
 
     return (
         <main>
+        {loading?
                 <div className="item-list-container">
+                <RotateLoader style={{marginTop:'100px' }}color='black'/>
+                </div>
+                :<div className="item-list-container">
                         <ItemList items={items} />
                 </div>  
+        }
         </main>
     );
 };
