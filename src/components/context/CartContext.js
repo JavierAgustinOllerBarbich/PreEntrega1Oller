@@ -47,7 +47,7 @@ import { createContext, useState } from "react";
   }
 
   return(
-      <CartContext.Provider value={{addItem, cartTotal, cartQuantity, isInCart, removeItem, clear, addItem }}>
+      <CartContext.Provider value={{cart, addItem, cartTotal, cartQuantity, isInCart, removeItem, clear}}>
           {children}
       </CartContext.Provider>
   )

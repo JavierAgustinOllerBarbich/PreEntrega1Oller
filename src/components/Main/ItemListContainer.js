@@ -45,7 +45,7 @@ const ItemListContainer = () => {
         <main>
         {loading?
                 <div className="item-list-container">
-                <RotateLoader style={{marginTop:'100px' }}color='black'/>
+                <RotateLoader color='black'/>
                 </div>
                 :<div className="item-list-container">
                         <ItemList items={items} />
