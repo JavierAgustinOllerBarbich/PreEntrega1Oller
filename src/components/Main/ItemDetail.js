@@ -6,11 +6,11 @@ import ItemCount from './ItemCount';
 const ItemDetail = ({ item }) => {
     const [unidades, setUnidades]= useState (0);
 
-    const{addToCart} = useContext(CartContext);
+    const{addItem} = useContext(CartContext);
 
     const prueba = (numero) => {
         setUnidades(numero);
-        addToCart(item, numero);
+        addItem(item, numero);
     };
 
    

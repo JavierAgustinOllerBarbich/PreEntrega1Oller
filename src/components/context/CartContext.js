@@ -8,6 +8,7 @@ import { createContext, useState } from "react";
 //FUNCION CON ITEM Y QUANTITY
 //pasar item y contador
   const addItem = (item, cantidad) => {
+    //console.log(addItem);
       const purchase = {...item, quantity:cantidad}
       const existsInCart = cart.find((prod)=> prod.id === item.id)
       if(existsInCart){
