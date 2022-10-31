@@ -12,10 +12,10 @@ const ItemDetail = ({ item }) => {
         addToCart(item, numero);
     };
 
-    if (true) {
+    /*if (true) {
         return <h1>Muestro esto</h1>;
     }
-
+    */
     return (
         <div className="container-detail">
             <img src={item.img} alt="" />
