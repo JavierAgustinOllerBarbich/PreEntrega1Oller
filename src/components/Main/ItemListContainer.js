@@ -41,7 +41,6 @@ const ItemListContainer = () => {
     }, [categoryName]);
 
 
-
     return (
         <main>
         {loading?
