@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
-import { products } from '../../Mock/productsMock';
+//import { products } from '../../Mock/productsMock';
 import { useParams } from 'react-router-dom';
+import { collection, doc, getDoc } from 'firebase/firestore';
+import { db } from '../../services/firebaseConfig';
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState({});
@@ -9,27 +11,24 @@ const ItemDetailContainer = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        const traerProducto = () => {
-            return new Promise((res, rej) => {
-                const producto = products.find(
-                    (prod) => prod.id === Number(id)
-                );
+        const collectionProd= collection  (db, 'productos')
+        
+        const ref= doc(collectionProd, id);
 
-                setTimeout(() => {
-                    res(producto);
-                }, 500);
-            });
-        };
-        traerProducto()
-            .then((res) => {
-                setItem(res);
+        getDoc(ref)
+            .then ((res)=>{
+                setItem({
+                    id:res.id,
+                    ...res.data(),
+                });
             })
-            .catch((error) => {
+            .catch((error)=>{
                 console.log(error);
             });
+
     }, [id]);
 
-    console.log(item);
+    // console.log(item);
 
     return (
         <div className="item-list-container">
@@ -39,3 +38,22 @@ const ItemDetailContainer = () => {
 };
 
 export default ItemDetailContainer;
+
+/*const traerProducto = () => {
+    return new Promise((res, rej) => {
+        const producto = products.find(
+            (prod) => prod.id === Number(id)
+        );
+
+        setTimeout(() => {
+            res(producto);
+        }, 500);
+    });
+};
+traerProducto()
+    .then((res) => {
+        setItem(res);
+    })
+    .catch((error) => {
+        console.log(error);
+    });*/

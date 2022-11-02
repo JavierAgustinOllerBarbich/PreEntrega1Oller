@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Footer = () => {
-    return <footer>Pagina creada por Agustin Oller</footer>;
+    return <footer>Precios en dolares totalmente aproximativos</footer>;
 };
 
 export default Footer;
