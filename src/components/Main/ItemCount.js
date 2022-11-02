@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react';
 const ItemCount = ({ stock, initial = 1, prueba }) => {
     const [count, setCount] = useState(initial);
 
-    //console.log(props);
-
     const sumar = () => {
         count < stock && setCount(count + 1);
     };

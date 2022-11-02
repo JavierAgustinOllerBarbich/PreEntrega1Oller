@@ -120,6 +120,10 @@ main {
   width: 350px;
 }
 
+.cartLink{
+  color: black !important;
+}
+
 /* ITEM COUNT */
 
 .container-count {

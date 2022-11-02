@@ -32,11 +32,11 @@ const Cart = () => {
             <button onClick={deleteAll}>Eliminar todo el carrito</button>
             <Link 
                  style={{
-                    border: '2px solid red',
+                    border: '2px solid black',
                     padding: '4px 6px',
                     borderRadius: '8px',
                 }}
-                to='/checkout'>Checkout</Link>
+                className="cartLink" to='/checkout'>Checkout</Link>
         </div>
     );
 };

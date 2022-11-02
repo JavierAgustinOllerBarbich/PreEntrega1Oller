@@ -2,8 +2,6 @@ import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import ItemCount from './ItemCount';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'
 
 const ItemDetail = ({ item }) => {
     const [unidades, setUnidades]= useState (0);
@@ -37,7 +35,7 @@ const ItemDetail = ({ item }) => {
                     />
                 ) : (
                     
-                    <Link to="/cart">Ir al carrito</Link>
+                    <Link className="cartLink" to="/cart">Ir al carrito</Link>
 
                  )} 
                
@@ -49,11 +47,3 @@ const ItemDetail = ({ item }) => {
 
 export default ItemDetail;
 
-
-
-
-    /*<h2 style={{ color: unidades === 0 ? 'black' : 'black' }}>
-    {unidades === 0
-        ? `Hay ${unidades} unidades`
-        : `Ya agregaste`}
-</h2>*/

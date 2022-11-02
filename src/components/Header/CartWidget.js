@@ -6,10 +6,10 @@ import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 
 function CartWidget() {
-    const {cartTotal}= useContext(CartContext);
+    const {total}= useContext(CartContext);
     return (
         <div>
-        <FontAwesomeIcon icon={faCartShopping} /><span> {cartTotal()} </span>
+        <FontAwesomeIcon icon={faCartShopping} /><span> {total()} </span>
         </div>
     )
 }

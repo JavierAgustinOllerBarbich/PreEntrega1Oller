@@ -5,10 +5,8 @@ import { createContext, useState } from "react";
  export const CartProvider = ({children}) => {
   const [cart, setCart]= useState([]);
 
-//FUNCION CON ITEM Y QUANTITY
-//pasar item y contador
   const addItem = (item, cantidad) => {
-    //console.log(addItem);
+  
       const purchase = {...item, quantity:cantidad}
       const existsInCart = cart.find((prod)=> prod.id === item.id)
       if(existsInCart){
@@ -25,6 +23,8 @@ import { createContext, useState } from "react";
               }
      
   }
+
+  const deleteAll = () => setCart([]);
 
   const clear = () =>{
       setCart([])
@@ -45,17 +45,9 @@ import { createContext, useState } from "react";
   const total = () => {
     return 1000;
     };
- /* const cartTotal = () => {
-      return cart.reduce((acc, prod)=> acc += prod.price * prod.quantity,0)
-  }*/
-
-  /*const getProductQuantity = (id) => {
-    const product = cart.find ((prod) => prod.id === id);
-    return product?.cantidad;
-  }*/
 
   return(
-      <CartContext.Provider value={{cart, addItem, total, cartQuantity, isInCart, removeItem, clear}}>
+      <CartContext.Provider value={{cart, addItem, total, cartQuantity, isInCart, removeItem, clear, deleteAll}}>
           {children}
       </CartContext.Provider>
   )

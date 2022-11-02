@@ -2,17 +2,15 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD-9cQm8OqBNajOMonSi-sp1CfeOssHYBU",
-  authDomain: "always-shoes.firebaseapp.com",
-  projectId: "always-shoes",
-  storageBucket: "always-shoes.appspot.com",
-  messagingSenderId: "737034066559",
-  appId: "1:737034066559:web:325cca01dbe34adb76bd4a"
+  apiKey: REACT_APP_API_KEY,
+  authDomain: REACT_APP_AUTH_DOMAIN,
+  projectId: REACT_APP_PROJECT_ID,
+  storageBucket: REACT_APP_SOTORAGE,
+  messagingSenderId: REACT_APP_MESSSAGING,
+  appId: REACT_APP_APP_ID
 };
 
 
 const app = initializeApp(firebaseConfig);
 
-
-//db es database
 export const db = getFirestore(app);

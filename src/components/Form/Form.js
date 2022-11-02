@@ -50,7 +50,7 @@ const Form = () => {
     if (orderId) {
         return (
             <h1>
-                Gracias por tu compra, tu número de seguimiento es ${orderId}
+                ¡Ya se realizo tu compra! Tu número de seguimiento es {orderId}
             </h1>
         );
     }

@@ -18,9 +18,6 @@ const ItemListContainer = () => {
        
         const collectionProd= collection (db, 'productos')
        
-            
-        //firebase: consulta coleccion con filtros
-        //const q = query(collectionProd, where('category', '==', categoryName) );
         const referencia = categoryName
             ? query(collectionProd, where('category', '==', categoryName) )
             : collectionProd
@@ -34,7 +31,7 @@ const ItemListContainer = () => {
                         ...prod.data(),
                     };
                 });
-               //console.log(products);
+            
                setItems(products)
              })
             .catch((error)=> {
@@ -61,26 +58,3 @@ const ItemListContainer = () => {
 };
 
 export default ItemListContainer;
-
-/*const traerProductos = () => {
-    setLoading(true)
-    return new Promise((res, rej) => {
-        const prodFiltrados = products.filter(
-            (prod) => prod.category === categoryName
-        );
-        const prod = categoryName ? prodFiltrados : products;
-        setTimeout(() => {
-            res(prod);
-        }, 500);
-    });
-};
-traerProductos()
-    .then((res) => {
-        setItems(res);
-    })
-    .catch((error) => {
-        console.log(error);
-    })
-    .finally (()=>{
-        setLoading(false);
-    });*/
