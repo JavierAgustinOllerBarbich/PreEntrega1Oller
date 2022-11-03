@@ -64,9 +64,12 @@ const Form = () => {
 
     if (orderId) {
         return (
+            <>
             <h1>
-                ¡Ya se realizo tu compra! Tu número de seguimiento es {orderId}
-            </h1>
+                ¡Ya se realizo tu compra! 
+            </h1>,
+            <h2>Tu codigo de seguimiento es {orderId}</h2> 
+            </>   
         );
     }
 

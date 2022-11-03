@@ -44,10 +44,15 @@ import { createContext, useState } from "react";
 
   const total = () => {
     return cart.reduce((acc, prod) => acc += prod.quantity * prod.price, 0);
-};
+    };
+
+const borrarUno = (id) => {
+    const prodFiltrado = cart.filter((prod) => prod.id !== id);
+    setCart(prodFiltrado);
+  };
 
   return(
-      <CartContext.Provider value={{cart, addItem, total, cartQuantity, isInCart, removeItem, clear, deleteAll}}>
+      <CartContext.Provider value={{cart, addItem, total, cartQuantity, isInCart, removeItem, clear, deleteAll, borrarUno}}>
           {children}
       </CartContext.Provider>
   )

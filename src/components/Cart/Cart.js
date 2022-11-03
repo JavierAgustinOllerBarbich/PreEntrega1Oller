@@ -4,7 +4,7 @@ import { CartContext } from '../context/CartContext';
 
 
 const Cart = () => {
-    const { cart, total ,deleteAll } = useContext(CartContext);
+    const { cart, total , borrarUno, deleteAll } = useContext(CartContext);
 
     return (
         <div>
@@ -26,7 +26,7 @@ const Cart = () => {
                         <h3 style={{ margin: '0px 10px' }}>$ {prod.price}</h3>
                         <h3>Cantidad: {prod.quantity}</h3>
                     </div>
-                    <button>Deshacer</button>
+                    <button onClick={() => borrarUno(prod.id)}>Borrar</button>
                 </div>
             ))}
             <h2>Total: ${total()}</h2>
