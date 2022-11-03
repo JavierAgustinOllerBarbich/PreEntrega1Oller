@@ -43,8 +43,8 @@ import { createContext, useState } from "react";
   }
 
   const total = () => {
-    return 1000;
-    };
+    return cart.reduce((acc, prod) => acc += prod.quantity * prod.price, 0);
+};
 
   return(
       <CartContext.Provider value={{cart, addItem, total, cartQuantity, isInCart, removeItem, clear, deleteAll}}>

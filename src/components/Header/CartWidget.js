@@ -4,10 +4,10 @@ import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 
 function CartWidget() {
-    const {total}= useContext(CartContext);
+    const {cartQuantity}= useContext(CartContext);
     return (
         <div>
-        <FontAwesomeIcon icon={faCartShopping} /><span> {total()} </span>
+        <FontAwesomeIcon icon={faCartShopping} /><span> {cartQuantity()} </span>
         </div>
     )
 }
