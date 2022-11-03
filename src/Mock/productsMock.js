@@ -1,6 +1,4 @@
 export const products = [
-
-    //NIKE
     {
         id: 1,
         title: 'Nike Air Jordan 1 Retro High',
@@ -36,7 +34,7 @@ export const products = [
 
 
 
-    //ADIDAS
+
     {
         id: 5,
         title: 'Adidas Ozweego',
@@ -72,7 +70,7 @@ export const products = [
 
 
 
-    //VANS
+  
     {
         id:9,
         title: 'Vans old skool',
@@ -108,7 +106,7 @@ export const products = [
 
 
 
-    //NEW BALANCE
+ 
     {
         id: 13,
         title: 'New balance 550',

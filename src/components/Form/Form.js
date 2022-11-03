@@ -6,6 +6,7 @@ import { db } from '../../services/firebaseConfig';
 const Form = () => {
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
+    const [telefono, setTelefono] = useState('')
     const [mail,setMail] = useState('');
     const [repMail,setRepMail] = useState('');
 
@@ -22,7 +23,7 @@ const Form = () => {
         e.preventDefault();
        
         const order = {
-            buyer: { name, lastName, mail, repMail },
+            buyer: { name, lastName, telefono, mail, repMail },
             items: cart,
             total: totalPrice,
             date: serverTimestamp(),
@@ -54,6 +55,10 @@ const Form = () => {
     
     const handleChangeRepMail = (e) => {
         setRepMail(e.target.value);
+    };
+
+    const handleChangeTelefono = (e) => {
+        setTelefono(e.target.value);
     };
 
 
@@ -90,19 +95,27 @@ const Form = () => {
                     value={lastName}
                 />
                 <input
-                    type="text"
+                    type="mail"
                     name="mail"
                     placeholder="Ingresar mail..."
                     onChange={handleChangeMail}
                     value={mail}
                 />
                 <input
-                    type="text"
+                    type="mail"
                     name="repmail"
                     placeholder="Repetir mail..."
                     onChange={handleChangeRepMail}
                     value={repMail}
                 />
+                <input
+                    type="number"
+                    name="telefono"
+                    placeholder="Ingrese su n° de telefono..."
+                    onChange={handleChangeTelefono}
+                    value={telefono}
+                />
+
                 <button>{loading ? 'Enviando...' : 'Enviar'}</button>
             </form>
         </div>
